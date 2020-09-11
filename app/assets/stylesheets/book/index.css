@@ -1,0 +1,53 @@
+.contact {
+  height: 400px;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-form {
+  width: 600px;
+}
+
+.name_form {
+  width: 500px;
+  padding: 15px;
+  border: 1px solid white;
+  display: block;
+}
+
+.name_form::placeholder {
+  text-align: center;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: larger;
+  color: black;
+}
+
+header {
+  display: flex;
+}
+
+.heading {
+  margin-top: 10px;
+  margin-left: 50px;
+}
+
+.navbar {
+  padding: 50px;
+  width: 100%;
+}
+
+.nav-lists {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: large;
+  display: flex;
+  justify-content: flex-end;
+}
+
+li{
+  list-style: none;
+  margin-right: 80px;
+  margin-top: 20px;
+  color: black;
+}
