@@ -112,3 +112,18 @@
   padding: 0;
   font-size: 13px;
 }
+
+@keyframes my-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.account-page {  
+  /* .boxが「my-fade-in」で状態変化するように指定 */
+  animation-name:     my-fade-in;
+  animation-duration: 3s;
+}
