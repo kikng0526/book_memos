@@ -51,3 +51,19 @@ li{
   margin-top: 20px;
   color: black;
 }
+
+/* スタイルの状態変化を「my-fade-in」という名前で定義 */
+@keyframes my-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.contact {  
+  /* .boxが「my-fade-in」で状態変化するように指定 */
+  animation-name:     my-fade-in;
+  animation-duration: 5s;
+}
