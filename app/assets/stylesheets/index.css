@@ -60,18 +60,22 @@ li{
 
 .login {
   color:#EFEFEF;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .sign-up {
   color: #EFEFEF;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .user-nickname {
   color: #EFEFEF;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .logout {
   color: #EFEFEF;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 
@@ -115,4 +119,5 @@ li{
   text-align: center;
   padding-right: 70px;
   padding-top: 190px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
