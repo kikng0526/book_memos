@@ -10,6 +10,7 @@ class BooksController < ApplicationController
   end
 
   def create
+    binding.pry
     @book = Book.new(book_params)
     if @book.save
       redirect_to root_path
@@ -21,6 +22,6 @@ class BooksController < ApplicationController
   private
 
   def book_params
-    params.require(:book).permit(:name,:category_id)
+    params.require(:book).permit(:name,:category_id, :image)
   end
 end
