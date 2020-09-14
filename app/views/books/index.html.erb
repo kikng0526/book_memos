@@ -24,8 +24,19 @@
       <div class="contact">
         <form class = "contact-form">
         <div class = "fade">
-           <input type="text" placeholder="本のタイトルは？" class="name_form">
-        </div> 
+           <%# <input type="text" placeholder="本のタイトルは？" class="name_form"> %>
+         <%= form_tag books_path, :method => 'get' do %> 
+          <p>
+           <%= text_field_tag :search, params[:search] %>
+           <%= submit_tag 'Search', :name => nil %>
+          </p>
+         <% end %>
+
+
+         
+
+
+        </div>
         </form>
       </div>
       <footer>

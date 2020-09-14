@@ -14,6 +14,7 @@ class BooksController < ApplicationController
   end
 
   def index
+    @books = Book.search(params[:search])
   end
 
   def show
