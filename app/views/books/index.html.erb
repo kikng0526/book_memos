@@ -24,18 +24,26 @@
       <div class="contact">
         <form class = "contact-form">
         <div class = "fade">
-           <%# <input type="text" placeholder="本のタイトルは？" class="name_form"> %>
-         <%= form_tag books_path, :method => 'get' do %> 
-          <p>
-           <%= text_field_tag :search, params[:search] %>
-           <%= submit_tag 'Search', :name => nil %>
-          </p>
-         <% end %>
-
-
-         
-
-
+            <%# <input type="text" placeholder="本のタイトルは？" class="name_form"> %>
+            <%# <%= form_tag books_path, :method => 'get' do %> 
+            <%# <p> %>
+            <%# <%= text_field_tag :search, params[:search] %>
+            <%# <%= submit_tag 'Search', :name => nil %> 
+            <%# </p>
+            <% end %> 
+            <%= search_form_for @q, url: search_path do |f| %>
+              <%# # 名前を含む検索 %>
+              <%= f.label :name_cont %>
+              <%= f.search_field :name_cont %>
+              <%= f.submit '検索' %>
+            <% end %>
+            <% if @books.length !=0%>
+              <% @books.each do |book|%>
+              <%= link_to book.name, book_path(book.id)%>
+            <% end%>
+            <% else %>
+              該当するものがありません
+            <% end %>
         </div>
         </form>
       </div>

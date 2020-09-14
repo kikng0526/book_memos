@@ -14,7 +14,13 @@ class BooksController < ApplicationController
   end
 
   def index
-    @books = Book.search(params[:search])
+    @q = Book.ransack(params[:q])
+    @books = @q.result(distinct: true)
+  end
+
+  def search
+    @q = book.search(search_params)
+    @books = @q.result(distinct: true)
   end
 
   def show
@@ -27,5 +33,9 @@ class BooksController < ApplicationController
 
   def book_params
     params.require(:book).permit(:name, :category_id, :image).merge(user_id: current_user.id)
+  end
+
+  def search_params
+    params.require(:q).permit!
   end
 end
