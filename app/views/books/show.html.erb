@@ -1,1 +1,41 @@
-<p>hello</p>
+<%# 商品の概要 %>
+<div class="item-show">
+  <div class="item-box">
+    <h2 class="name">
+      <%= @book.name %>
+    </h2>
+    <div class='item-img-content'>
+      <%= image_tag @book.image ,class:"item-box-img" %>
+    <%# ログインしているユーザーと出品しているユーザーが、同一人物の場合と同一人物ではない場合で、処理を分けましょう %>
+
+    <%# <%= link_to '商品の編集', "#", method: :get, class: "item-red-btn" %> 
+    <%# <p class='or-text'>or</p> %>
+    <%# <%= link_to '削除', "#", method: :delete, class:'item-destroy' %> 
+
+    <%# 商品が売れていない場合はこちらを表示しましょう %>
+    <%# <%= link_to '購入画面に進む', "#" ,class:"item-red-btn"%>
+    <%# //商品が売れていない場合はこちらを表示しましょう %>
+
+
+    <%# //ログインしているユーザーと出品しているユーザーが、同一人物の場合と同一人物ではない場合で、処理を分けましょう %>
+    <table class="detail-table">
+      <tbody>
+        <tr>
+          <th class="detail-item">カテゴリー</th>
+          <td class="detail-value"><%= @book.category.name %></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <%# /商品の概要 %>
+
+  <div class="comment-box">
+    <form>
+      <textarea class="comment-text"></textarea>
+      <button type="submit" class="comment-btn">
+        <%= image_tag "logo.png" ,class:"comment-flag-icon" ,width:"20",height:"25"%>
+        <span>コメントする<span>
+      </button>
+    </form>
+  </div>
+</div>
