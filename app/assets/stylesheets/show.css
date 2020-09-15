@@ -1,7 +1,5 @@
-/* 商品の概要 */
-
 .item-show {
-  background-color: #f8f8f8;
+  background-image: url(https://beiz.jp/images_P/paper/paper_00108.jpg);
   width: 100vw;
   display: flex;
   flex-direction: column;
@@ -10,7 +8,6 @@
 }
 
 .item-box {
-  background-color: #FFF;
   width: 70vw;
   min-width: 1200px;
   padding: 10vh 15vw;
@@ -20,49 +17,21 @@
 }
 
 .item-box>.name {
-  text-align: center;
+  display: flex;
+  justify-content: flex-start;
+  font-family: Georgia, 'Times New Roman', Times, serif;
   font-weight: bold;
-  font-size: 25px;
+  font-size: 50px;
 }
 
 .item-box-img {
+  min-height: 500px;
+  opacity: 1;
+  object-fit: contain;
   height: 50vh;
   width: 60vw;
-  min-height: 500px;
-  background-color: rgb(205, 202, 202);
-  object-fit: contain;
 }
 
-.item-price-box {
-  margin: 25px 0px;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
-
-.item-price-box>.item-price {
-  font-size: 4vh;
-  font-weight: bold;
-}
-
-.item-price-box>.item-postage {
-  font-size: 16px;
-}
-
-
-.item-red-btn {
-  text-align: center;
-  background-color: #ea352d;
-  font-size: 24px;
-  font-weight: bold;
-  color: #FFF;
-  margin: 20px 0px;
-  padding: 2vh 10vw;
-}
-
-.or-text {
-  font-size: 20px;
-}
 
 .item-destroy {
   background-color: lightgray;
@@ -85,8 +54,7 @@
 
 .detail-item {
   width: 20%;
-  background-color: #eee;
-  border: 1px solid #dedede;
+  background-color: #fff;
   font-size: 14px;
   text-align: center;
 }
@@ -96,15 +64,11 @@
   padding: 20px;
   border: 1px solid #dedede;
   font-size: 14px;
+  background-color: #fff;
 }
 
-.option {
-  display: flex;
-  justify-content: space-between;
-  position: relative;
-}
 
-.favorite-btn {
+/* .favorite-btn {
   border-radius: 40px;
   width: 15vw;
   min-width: 200px;
@@ -114,24 +78,12 @@
   justify-content: center;
   align-items: center;
   margin-right: 20px;
-}
+} */
 
-.favorite-star-icon {
+/* .favorite-star-icon {
   margin-right: 5px;
-}
+} */
 
-.report-btn {
-  border-radius: 40px;
-  width: 15vw;
-  min-width: 200px;
-
-  padding: 1vh 0;
-  color: black;
-  border: 2px solid #2d2d2d;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
 .report-flag-icon {
   margin-right: 5px;
@@ -141,7 +93,7 @@
 /* /商品の概要 */
 
 .comment-box {
-  width: 40vw;
+  width: 300px;
   background-color: #fff;
   margin: 5vh 0;
   text-align: center;
@@ -190,20 +142,6 @@
 
 }
 
-.change-item-btn {
-  font-size: 30px;
-  text-decoration: none;
-  color: #3CCACE;
-}
-
-.another-item {
-  display: block;
-  margin: 30px 0px 8px;
-  color: #3CCACE;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 23px;
-}
 
 
 form input,
@@ -216,16 +154,18 @@ form textarea {
   font-family: "游ゴシック", "YuGothic";
 }
 
+
 form input[type="submit"] {
-  background-color: #57C3E9;
-  border-radius: 20px;
-  color: #fff;
+  background-color: #fff;
+  border-radius: 4px;
+  color:#fff;
   border: 0;
   font-size: 18px;
+  transition: 2s;
 }
 
 form input[type="submit"]:hover {
-  background-color: #84d3ef;
+  background-color: black;
 }
 
 .container {
@@ -234,6 +174,7 @@ form input[type="submit"]:hover {
   box-shadow: 0 0 10px rgba(41, 41, 41, 0.2);
   background-color: white;
   box-sizing: border-box;
+  width: 670px;
 }
 
 .container h3 {
@@ -257,15 +198,6 @@ form input[type="submit"]:hover {
   text-decoration: underline;
 }
 
-footer {
-  margin: 30px auto;
-  padding: 10px;
-  color: #D8D8D8;
-}
-
-footer p {
-  text-align: center;
-}
 
 .search-form {
   text-align: center;

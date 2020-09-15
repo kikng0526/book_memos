@@ -31,30 +31,29 @@
             <%# <%= submit_tag 'Search', :name => nil %> 
             <%# </p>
             <% end %> 
+            <p class = "search">本の名は?</p>
             <%= search_form_for @q, url: search_path do |f| %>
               <%# # 名前を含む検索 %>
-              <%= f.label :name_cont %>
               <%= f.search_field :name_cont %>
+              <p>検索</p>
               <%= f.submit '検索' %>
 
              <%# ログインしている場合 %>
-              <% if @books.length !=0 %>
-                <% @books.each do |book|%>
-                  <%= link_to book.name, book_path(book.id)%>
+             <p>検索結果</p>
+             <div class = "ans">
+              <% if @books.length != 0 %>
+                <% @books.find do |book|%>
+                    <%= link_to book.name, book_path(book.id), class: "ffff"%>
                 <% end %>
               <% else %>
                 <% if user_signed_in?%>
-                  <%= link_to '本が見つかりません。新しく追加しましょう！', new_book_path %>
+                  <%= link_to '本が見つかりません。新しく追加しましょう！', new_book_path, class: "ffff" %>
                 <% else %>
-                  <%= link_to '本が見つかりません。新規登録して本を追加しましょう！', new_user_registration_path%>
+                  <%= link_to '本が見つかりません。新規登録して本を追加しましょう！', new_user_registration_path, class: "ffff" %>
                 <% end %>
               <% end %>
-              <%# ログインしている場合 %>
-
-              <%# ログインしていない場合 %>
-
             <% end %>
-            <%# ログインしていない場合 %>
+            </div>
         </div>
         </form>
       </div>

@@ -1,11 +1,9 @@
-
 .items-sell-contents {
-  background-color: #f5f5f5;
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-size: 14px;
   display: flex;
   flex-direction: column;
-  background-image: url(https://beiz.jp/images_P/paper/paper_00108.jpg)
+  opacity: 1;
 }
 
 .items-sell-header {
@@ -78,7 +76,7 @@
   width: 100%;
   padding: 16px 16px 8px;
   font-size: 16px;
-  background-image: url(https://beiz.jp/images_P/paper/paper_00108.jpg)
+ opacity: 1;
 }
 
 .items-explain {

@@ -8,7 +8,7 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url(https://beiz.jp/images_P/paper/paper_00108.jpg);
+  opacity: 1;
 }
 
 .contact-form {
@@ -20,7 +20,7 @@ html {
   padding: 15px;
   border: 1px solid;
   display: block;
-  background-image: url(https://beiz.jp/images_P/paper/paper_00108.jpg);
+  opacity: 1;
 }
 
 .name_form::placeholder {
@@ -54,28 +54,34 @@ header {
 li{
   font-size: large;
   list-style: none;
-  margin-right: 80px;
+  margin-right: 20px;
   margin-top: 20px;
+  background-color: #fff;
 }
 
 .login {
-  color:#EFEFEF;
+  color: #fff;
   font-family: Georgia, 'Times New Roman', Times, serif;
+  text-decoration: none;
+  
 }
 
 .sign-up {
-  color: #EFEFEF;
+  color: #fff;
   font-family: Georgia, 'Times New Roman', Times, serif;
+  text-decoration: none;
 }
 
 .user-nickname {
-  color: #EFEFEF;
+  color: #fff;
   font-family: Georgia, 'Times New Roman', Times, serif;
+  text-decoration: none;
 }
 
 .logout {
-  color: #EFEFEF;
+  color: #fff;
   font-family: Georgia, 'Times New Roman', Times, serif;
+  text-decoration: none;
 }
 
 
@@ -92,21 +98,17 @@ li{
 .fade {  
   /* .boxが「my-fade-in」で状態変化するように指定 */
   animation-name:     my-fade-in;
-  /* animation-duration: 7s; */
+   /* animation-duration: 7s; */
 }
 
 .btn-border {
-  display: inline-block;
-  max-width: 180px;
+  display: flex;
   text-align: left;
-  border: 2px solid ;
-  font-size: 16px;
-  color: gray;
-  text-decoration: none;
+  font-size: 14px;
   font-weight: bold;
   padding: 8px 16px;
-  border-radius: 4px;
   transition: .4s;
+  opacity: 1;
 }
 
 .btn-border:hover {
@@ -120,4 +122,32 @@ li{
   padding-right: 70px;
   padding-top: 190px;
   font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.ans {
+  width: 576px;
+  margin: 5px 0 15px;
+  padding: 12px;
+  border: 1px solid #D8D8D8;
+  border-radius: 5px;
+  font-family: "游ゴシック", "YuGothic";
+  background-color: #fff;
+  text-align: center;
+  transition: 2s;
+}
+
+.ffff{
+  color: #fff;
+  text-decoration: none;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.ans:hover {
+  background-color: black;
+}
+
+p {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  animation-name:     my-fade-in;
+  animation-duration: 7s;
 }
