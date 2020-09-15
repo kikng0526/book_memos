@@ -25,7 +25,9 @@ class BooksController < ApplicationController
 
   def show
     @book = Book.find(params[:id])
-    redirect_to action: :index unless user_signed_in?
+    # redirect_to action: :index unless user_signed_in?
+    @comment = Comment.new
+    @comments = @book.comments.includes(:user)
   end
 
 
@@ -38,4 +40,9 @@ class BooksController < ApplicationController
   def search_params
     params.require(:q).permit!
   end
+
+  def comment_params
+    params.require(:comment).permit(:text).merge(user_id: current_user.id, book_id: params[:book_id])
+  end
+
 end
