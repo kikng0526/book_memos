@@ -36,14 +36,25 @@
               <%= f.label :name_cont %>
               <%= f.search_field :name_cont %>
               <%= f.submit '検索' %>
+
+             <%# ログインしている場合 %>
+              <% if @books.length !=0 %>
+                <% @books.each do |book|%>
+                  <%= link_to book.name, book_path(book.id)%>
+                <% end %>
+              <% else %>
+                <% if user_signed_in?%>
+                  <%= link_to '本が見つかりません。新しく追加しましょう！', new_book_path %>
+                <% else %>
+                  <%= link_to '本が見つかりません。新規登録して本を追加しましょう！', new_user_registration_path%>
+                <% end %>
+              <% end %>
+              <%# ログインしている場合 %>
+
+              <%# ログインしていない場合 %>
+
             <% end %>
-            <% if @books.length !=0%>
-              <% @books.each do |book|%>
-              <%= link_to book.name, book_path(book.id)%>
-            <% end%>
-            <% else %>
-              該当するものがありません
-            <% end %>
+            <%# ログインしていない場合 %>
         </div>
         </form>
       </div>
