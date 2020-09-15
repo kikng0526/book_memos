@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get 'search', to: 'books#search'
   devise_for :users
   resources :books do
-    resources :comments
+    resources :comments, only: :create
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
