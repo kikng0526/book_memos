@@ -15,8 +15,8 @@
              <li><button type="button" class = "btn-border"> <%= link_to current_user.nickname, "/users/#{current_user.id}", class: "user-nickname" %></button> </li> 
              <li><button type="button" class = "btn-border"> <%= link_to 'ログアウト', "/users/sign_out", method: :delete, class: "logout" %></button> </li>
            <% else %>
-            <li><button type="button" class = "btn-border" ><%= link_to 'LOG IN', "/users/sign_in", class: "login" %></button></li>
-            <li><button type="button" class = "btn-border"><%= link_to 'SAIN IN', "/users/sign_up", class: "sign-up" %></button></li>
+            <li><button type="button" class = "btn-border" ><%= link_to 'ログイン', "/users/sign_in", class: "login" %></button></li>
+            <li><button type="button" class = "btn-border"><%= link_to 'サインイン', "/users/sign_up", class: "sign-up" %></button></li>
           <% end %> 
         </ul>
       </div>

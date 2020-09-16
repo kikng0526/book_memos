@@ -1,5 +1,25 @@
-<%# 商品の概要 %>
-<html>
+<head>
+    <meta charset="UTF-8">
+    <title>book_memo</title>
+    <link rel="stylesheet" href="show.css">
+</head>
+<body>
+<header>
+      <div class = "heading">
+       <h1 class = "title"><a href= "/"> <%= image_tag 'logo.png' %></a></h1>
+      </div>
+      <div class = "navbar">
+        <ul class='nav-lists'>
+          <% if user_signed_in? %>
+             <li><button type="button" class = "btn-border"> <%= link_to current_user.nickname, "/users/#{current_user.id}", class: "user-nickname" %></button> </li> 
+             <li><button type="button" class = "btn-border"> <%= link_to 'ログアウト', "/users/sign_out", method: :delete, class: "logout" %></button> </li>
+           <% else %>
+            <li><button type="button" class = "btn-border" ><%= link_to 'ログイン', "/users/sign_in", class: "login" %></button></li>
+            <li><button type="button" class = "btn-border"><%= link_to 'サインイン', "/users/sign_up", class: "sign-up" %></button></li>
+          <% end %> 
+        </ul>
+      </div>
+</header>
 <div class="item-show">
   <div class="item-box">
     <h2 class="name">
@@ -40,18 +60,19 @@
         <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>
       <% end %>
     <div class="comments">
-      <h4>＜コメント一覧＞</h4>
+      <h4>＜感想一覧＞</h4>
       <% if @comments %>
         <% @comments.each do |comment| %>
-          <p>
-            <%= @book.user.nickname %>
-            <%= comment.text %>
+          <p class = "com">
+          <%= comment.user.nickname%> <a>さん</a>
+          <a>:</a><%= comment.text %>
           </p>
         <% end %>
       <% end %>
     </div>
-        <%# <%= image_tag "logo.png" ,class:"comment-flag-icon" ,width:"20",height:"25"%>
-        <%# <span>コメントする<span> %>
   </div>
+  <footer>
+      <p class = "footer">©︎book_memo</p>
+      </footer>
 </div>
-</html>
+</body>
