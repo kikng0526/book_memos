@@ -1,25 +1,7 @@
-<head>
-    <meta charset="UTF-8">
-    <title>book_memo</title>
-    <link rel="stylesheet" href="show.css">
-</head>
 <body>
-<header>
-      <div class = "heading">
-       <h1 class = "title"><a href= "/"> <%= image_tag 'logo.png' %></a></h1>
-      </div>
-      <div class = "navbar">
-        <ul class='nav-lists'>
-          <% if user_signed_in? %>
-             <li><button type="button" class = "btn-border"> <%= link_to current_user.nickname, "/users/#{current_user.id}", class: "user-nickname" %></button> </li> 
-             <li><button type="button" class = "btn-border"> <%= link_to 'ログアウト', "/users/sign_out", method: :delete, class: "logout" %></button> </li>
-           <% else %>
-            <li><button type="button" class = "btn-border" ><%= link_to 'ログイン', "/users/sign_in", class: "login" %></button></li>
-            <li><button type="button" class = "btn-border"><%= link_to 'サインイン', "/users/sign_up", class: "sign-up" %></button></li>
-          <% end %> 
-        </ul>
-      </div>
-</header>
+<%= render "shared/header"%>
+
+
 <div class="item-show">
   <div class="item-box">
     <h2 class="name">
@@ -27,18 +9,6 @@
     </h2>
     <div class='item-img-content'>
       <%= image_tag @book.image ,class:"item-box-img" %>
-    <%# ログインしているユーザーと出品しているユーザーが、同一人物の場合と同一人物ではない場合で、処理を分けましょう %>
-
-    <%# <%= link_to '商品の編集', "#", method: :get, class: "item-red-btn" %> 
-    <%# <p class='or-text'>or</p> %>
-    <%# <%= link_to '削除', "#", method: :delete, class:'item-destroy' %> 
-
-    <%# 商品が売れていない場合はこちらを表示しましょう %>
-    <%# <%= link_to '購入画面に進む', "#" ,class:"item-red-btn"%>
-    <%# //商品が売れていない場合はこちらを表示しましょう %>
-
-
-    <%# //ログインしているユーザーと出品しているユーザーが、同一人物の場合と同一人物ではない場合で、処理を分けましょう %>
     <table class="detail-table">
       <tbody>
         <tr>
@@ -48,8 +18,6 @@
       </tbody>
     </table>
   </div>
-  <%# /商品の概要 %>
-
   <div class="container">
     <% if current_user %>
       <%= form_with(model: [@book, @comment], local: true) do |f| %>
@@ -71,8 +39,6 @@
       <% end %>
     </div>
   </div>
-  <footer>
-      <p class = "footer">©︎book_memo</p>
-      </footer>
+  <%= render "shared/footer" %>
 </div>
 </body>
