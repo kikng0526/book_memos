@@ -151,3 +151,16 @@ p {
   animation-name:     my-fade-in;
   animation-duration: 7s;
 }
+
+.submit_btn[type="submit"] {
+  background-color: #fff;
+  border-radius: 4px;
+  color:#fff;
+  border: 0;
+  font-size: 18px;
+  transition: 1s;
+}
+
+[type="submit"]:hover {
+  background-color: black;
+}
