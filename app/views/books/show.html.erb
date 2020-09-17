@@ -30,12 +30,15 @@
     <div class="comments">
       <h4>＜感想一覧＞</h4>
       <% if @comments %>
-        <% @comments.each do |comment| %>
-          <p class = "com">
-          <%= comment.user.nickname%> <a>さん</a>
-          <a>:</a><%= comment.text %>
-          </p>
-        <% end %>
+        <div id = "messages">
+          <% @comments.each do |comment| %>
+            <p class = "com">
+            <%= comment.user.nickname%> <a>さん</a>
+            <a>:</a><%= comment.text %>
+            <%= link_to "消去", [@book, comment], method: :delete %>
+            </p>
+          <% end %>
+        </div>
       <% end %>
     </div>
   </div>
