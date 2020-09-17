@@ -13,6 +13,7 @@
         <p>
           please click
         </p>
+        <%= form_with model: @book, local: true do |f| %>
         <%= f.file_field :image, id:"item-image" %>
       </div>
     </div>
