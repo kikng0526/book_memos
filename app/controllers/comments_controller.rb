@@ -1,8 +1,9 @@
 class CommentsController < ApplicationController
   def create
     comment = Comment.create(comment_params)
-    # redirect_to root_path
-    redirect_to "/books/#{comment.book.id}"
+    if comment.save
+      ActionCable.server.broadcast 'message_channel', content: comment
+    end
   end
 
   def destroy
