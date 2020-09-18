@@ -6,7 +6,7 @@ class LikesController < ApplicationController
 
   def destroy
     # @comment = Comment.find(:params[:comment_id])
-    @like = current_user.likes.find_by(comment_id: params[:comment_id], user_id: current_user.id )
+    @like = Like.find_by(comment_id: params[:comment_id], user_id: current_user.id )
     @like.destroy
     redirect_back(fallback_location: root_path)
   end

@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_many :books
   has_many :comments
   has_many :likes, dependent: :destroy 
+  has_many :liked_comments, through: :likes, source: :comment
 
   def already_liked?(comment)
     self.likes.exists?(comment_id: comment.id)
