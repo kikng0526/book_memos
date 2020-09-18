@@ -29,6 +29,7 @@ class BooksController < ApplicationController
     # redirect_to action: :index unless user_signed_in?
     @comment = Comment.new
     @comments = @book.comments.includes(:user)
+    @like = Like.new
   end
 
 

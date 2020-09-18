@@ -35,7 +35,15 @@
             <p class = "com">
             <%= comment.user.nickname %> <a>さん</a>
             <a>:</a><%= comment.text %>
-            <%= link_to '消去',[@book, comment], method: :delete, class:'delete'%>
+
+            <% if current_user.already_liked?(comment) %>
+              <%= link_to 'いいねを外す', comment_like_path(comment), method: :delete %>
+            <% else %>
+               <%= link_to 'いいね', comment_likes_path(comment), method: :post  %>
+            <% end %>
+            <%= comment.likes.count %>
+              
+          <%= link_to '消去',[@book, comment], method: :delete, class:'delete'%>
             </p>
           <% end %>
        <% end %>
