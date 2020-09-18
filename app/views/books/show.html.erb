@@ -29,17 +29,17 @@
       <% end %>
     <div class="comments">
       <h4>＜感想一覧＞</h4>
-      <% if @comments %>
-        <div id = "messages">
-          <% @comments.each do |comment| %>
+      <div id = "messages">
+        <% if @comments %>
+          <% @comments.reverse_each do |comment| %>
             <p class = "com">
-            <%= comment.user.nickname%> <a>さん</a>
+            <%= comment.user.nickname %> <a>さん</a>
             <a>:</a><%= comment.text %>
-            <%= link_to "消去", [@book, comment], method: :delete %>
+            <%= link_to '消去',[@book, comment], method: :delete, class:'delete'%>
             </p>
           <% end %>
-        </div>
-      <% end %>
+       <% end %>
+      </div>
     </div>
   </div>
   <%= render "shared/footer" %>

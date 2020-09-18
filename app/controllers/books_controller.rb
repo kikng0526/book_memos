@@ -2,6 +2,7 @@ class BooksController < ApplicationController
   
   def new
     @book = Book.new
+    @commets = Comment.all
   end
 
   def create

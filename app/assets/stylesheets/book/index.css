@@ -149,7 +149,7 @@ li{
 p {
   font-family: Georgia, 'Times New Roman', Times, serif;
   animation-name:     my-fade-in;
-  animation-duration: 7s;
+  animation-duration: s;
 }
 
 .submit_btn[type="submit"] {
