@@ -19,7 +19,7 @@
   </div>
   <div class="container">
     <% if current_user %>
-      <%= form_with(model: [@book, @comment], local: true) do |f| %>
+      <%= form_with(model: [@book, @comment], remote: true) do |f| %>
         <%= f.text_area :text, placeholder: "コメントする" ,rows: "2"%>
         <%= f.submit "SEND" %>
       <% end %>
@@ -37,16 +37,19 @@
 
             <% if current_user.already_liked?(comment) %>
               <%= link_to comment_like_path(comment), method: :delete  do%>
-                <i class="fas fa-heart"></i>
+                <i class="fas fa-heart"><%= comment.likes.count %></i>
               <% end %>
             <% else %>
                <%= link_to comment_likes_path(comment), method: :post  do %>
-                 <i class="far fa-heart"></i>
+                 <i class="far fa-heart"><%= comment.likes.count %></i>
                <% end %>
             <% end %>
-            <%= comment.likes.count %>
+            
+            
               
-          <%# <%= link_to '消去',[@book, comment], method: :delete, class:'delete'%>
+           <%= link_to [@book, comment], method: :delete, class:'delete' do%>
+             <i class="fas fa-trash-alt"></i>
+           <% end %>
             </p>
           <% end %>
        <% end %>

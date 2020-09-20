@@ -151,6 +151,7 @@ form input[type="submit"]:hover {
 .comments {
   padding: 5px;
   margin-top: 15px;
+  position: relative;
 }
 
 .comments a:hover {
@@ -179,16 +180,15 @@ form input[type="submit"]:hover {
   background-color: gainsboro;
 }
 
-.delete {
-  text-decoration: none;
-  color: red;
-  border: 1px solid black;
-  background-color: black;
-  padding: 3px;
-  margin-left: 500px;
-}
-
 .fa-heart {
+  position: absolute;
+  left: 700px;
   color: tomato;
   font-size: 20px;
 }
+
+.fa-trash-alt{
+  position: absolute;
+  left: 750px
+}
+
