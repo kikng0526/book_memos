@@ -19,6 +19,7 @@
   </div>
   <div class="container">
     <% if current_user %>
+
       <%= form_with(model: [@book, @comment], remote: true) do |f| %>
         <%= f.text_area :text, placeholder: "コメントする" ,rows: "2"%>
         <%= f.submit "SEND" %>
@@ -35,7 +36,7 @@
             <%= comment.user.nickname %> <a>さん</a>
             <a>:</a><%= comment.text %>
 
-            <% if current_user.already_liked?(comment) %>
+          <% if current_user.already_liked?(comment) %>
               <%= link_to comment_like_path(comment), method: :delete  do%>
                 <i class="fas fa-heart"><%= comment.likes.count %></i>
               <% end %>
@@ -44,11 +45,9 @@
                  <i class="far fa-heart"><%= comment.likes.count %></i>
                <% end %>
             <% end %>
-            
-            
-              
-           <%= link_to [@book, comment], method: :delete, class:'delete' do%>
-             <i class="fas fa-trash-alt"></i>
+
+            <%= link_to [@book, comment], method: :delete, class:'delete' do %>
+             <i class="fas fa-trash-alt"></i> 
            <% end %>
             </p>
           <% end %>
