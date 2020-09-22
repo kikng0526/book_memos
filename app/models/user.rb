@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   has_many :books
   has_many :comments
+  has_one_attached :image
   has_many :likes, dependent: :destroy 
   has_many :like_comments, through: :likes, source: :comment
 
