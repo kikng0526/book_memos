@@ -1,7 +1,5 @@
 <div class="items-sell-contents">
-  <header class="items-sell-header">
-    <%= link_to image_tag('logo.png'), "/" %>
-  </header>
+  <%= render "shared/header"%>
   <div class="items-sell-main">
     <h2 class="items-sell-title">book_info</h2>
     <div class="img-upload">
@@ -50,4 +48,5 @@
     <%# /下部ボタン %>
   </div>
   <% end %>
+  <%= render "shared/footer" %>
 </div>

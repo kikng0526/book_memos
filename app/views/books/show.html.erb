@@ -40,10 +40,8 @@
         <% if @comments %>
           <% @comments.reverse_each do |comment| %>
             <p class = "com">
-           <%= link_to user_path(comment.user_id), class: "user-nickname"  do %>
-            <%= comment.user.nickname %> <a>さん</a>
+            <%= comment.user.nickname %> <u>さん</u>
             <a>:</a><%= comment.text %>
-           <% end %>
           
 
           <% if current_user.already_liked?(comment) %>

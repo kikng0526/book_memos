@@ -1,10 +1,20 @@
+@keyframes my-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 .item-show {
-  background-image: url(https://beiz.jp/images_P/paper/paper_00108.jpg);
   width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 5vh 0;
+  animation-name: my-fade-in;
+  animation-duration: 4s;
 }
 
 .item-box {
@@ -13,6 +23,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  opacity: .8;
 }
 
 .item-box>.name {
@@ -21,25 +32,17 @@
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-weight: bold;
   font-size: 50px;
+  filter: drop-shadow(1px 1px 10px white);
 }
 
 .item-box-img {
   min-height: 500px;
   opacity: 1;
   object-fit: contain;
-  height: 50vh;
-  width: 60vw;
+  height: 40vh;
+  width: 50vw;
 }
 
-
-.item-destroy {
-  background-color: lightgray;
-  text-align: center;
-  font-size: 24px;
-  color: black;
-  margin: 20px 0px;
-  padding: 2vh 10vw;
-}
 
 .item-explain-box {
   font-size: 18px;
@@ -115,6 +118,7 @@ form textarea {
   border: 1px solid #D8D8D8;
   border-radius: 5px;
   font-family: "游ゴシック", "YuGothic";
+ 
 }
 
 
@@ -126,6 +130,7 @@ form input[type="submit"] {
   font-size: 18px;
   transition: 1s;
 }
+
 
 form input[type="submit"]:hover {
   background-color: black;
@@ -202,5 +207,9 @@ form input[type="submit"]:hover {
 .fa-edit {
   color: black;
   font-size: 25px;
+  text-decoration: none;
+}
+
+u {
   text-decoration: none;
 }

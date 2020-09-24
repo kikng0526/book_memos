@@ -1,14 +1,15 @@
 html {
-  width: 100%;
-  height: 100%;
-  background-image: url(https://beiz.jp/images_P/paper/paper_00108.jpg);
+  background-image: url(https://www.pakutaso.com/shared/img/thumb/cafe201261759_TP_V.jpg);
+  background-size: cover;
+  background-attachment: fixed;
 }
+
 .contact {
   height: 400px;
   display: flex;
   justify-content: center;
   align-items: center;
-  opacity: 1;
+  opacity: .7;
 }
 
 .contact-form {
@@ -18,9 +19,9 @@ html {
 .name_form {
   width: 500px;
   padding: 15px;
-  border: 1px solid;
+  border: 1px solid #D8D8D8;
   display: block;
-  opacity: 1;
+  color: #fff;
 }
 
 .name_form::placeholder {
@@ -28,6 +29,7 @@ html {
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-size: larger;
   color: black;
+  opacity: .6;
 }
 
 header {
@@ -37,6 +39,7 @@ header {
 .heading {
   margin-top: 10px;
   margin-left: 50px;
+  filter: drop-shadow(2px 4px 6px white);
 }
 
 .navbar {
@@ -57,13 +60,13 @@ li{
   margin-right: 20px;
   margin-top: 20px;
   background-color: #fff;
+  opacity: .7;
 }
 
 .login {
   color: #fff;
   font-family: Georgia, 'Times New Roman', Times, serif;
   text-decoration: none;
-  
 }
 
 .sign-up {
@@ -108,7 +111,6 @@ li{
   font-weight: bold;
   padding: 8px 16px;
   transition: .4s;
-  opacity: 1;
 }
 
 .btn-border:hover {
@@ -122,21 +124,21 @@ li{
   padding-right: 70px;
   padding-top: 190px;
   font-family: Georgia, 'Times New Roman', Times, serif;
+
 }
 
 .ans {
   width: 576px;
   margin: 5px 0 15px;
   padding: 12px;
-  border: 1px solid #D8D8D8;
   border-radius: 5px;
   font-family: "游ゴシック", "YuGothic";
-  background-color: #fff;
   text-align: center;
   transition: 2s;
+  background-color: #fff;
 }
 
-.ffff{
+.ffff{  
   color: #fff;
   text-decoration: none;
   font-family: Georgia, 'Times New Roman', Times, serif;
@@ -149,16 +151,15 @@ li{
 p {
   font-family: Georgia, 'Times New Roman', Times, serif;
   animation-name:     my-fade-in;
-  animation-duration: s;
+  filter: drop-shadow(1px 1px 1px white);
 }
 
 .submit_btn[type="submit"] {
   background-color: #fff;
   border-radius: 4px;
   color:#fff;
-  border: 0;
   font-size: 18px;
-  transition: 1s;
+  transition: 2s;
 }
 
 [type="submit"]:hover {
