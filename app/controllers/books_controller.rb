@@ -25,6 +25,7 @@ class BooksController < ApplicationController
   end
 
   def show
+   
     @book = Book.find(params[:id])
     # redirect_to action: :index unless user_signed_in?
     @comment = Comment.new

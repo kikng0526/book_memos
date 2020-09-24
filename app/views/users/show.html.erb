@@ -1,9 +1,41 @@
-<div class="contents row">
-  <p><%= current_user.nickname %>さんの投稿一覧</p>
-  <% @comments.each do |comment| %>
-    <div class="content_post" style="background-image: url(<%= comment.image %>);">
-      <p><%= comment.text %></p>
-      <span class="name"><%= comment.name %></span>
-    </div>
-  <% end %>
-</div>
+<html>
+  <head>
+    <link rel= "stylesheet" href="hoge.css">
+  </head>
+  <body>
+  <%# header %>
+    <%= render "shared/header"%>
+  <%# header %>
+    <div class = "menu">
+      <div class = "containers">
+         <div class = "menu-card-wrapper"> 
+          
+            <%# 本の一覧 %>
+              
+              <% @books.each do |book| %>
+              <%# <div class = "menu-card-wrapper"> %>
+              <div class = "menu-card">
+              <div class='item-card-inner'> 
+                  <% if book.image.attached? %>
+                      <%= image_tag book.image, class: "menu-image"%>
+                  <% end %>
+                  <h3 class='item-name'>
+                    <%= link_to book_path(book.id), local: true do %>
+                      <%= book.name %>
+                    <% end %>
+                  </h3>
+                    <%# <%= image_tag book.image, class: "item-img" %>
+                
+                    </div>
+                    </div>
+                    <% end %>
+                    </div>
+              
+            
+            <%# 本の一覧 %>
+        <%# </div> %>
+      </div>
+   </div>
+   <%= render "shared/footer" %>
+  </body>
+</html>

@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
+  get 'users/show'
   root to: "books#index"
   get 'search', to: 'books#search'
-  # post   '/like/:comment_id' => 'likes#like',   as: 'like'
-  # delete '/like/:comment_id' => 'likes#unlike', as: 'unlike'
   devise_for :users
+  resources :users, :only => [:show]
 
   resources :books do
     resources :comments, only: [:create, :destroy] 
