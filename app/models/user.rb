@@ -17,11 +17,9 @@ class User < ApplicationRecord
      VALID_PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i.freeze
      validates :password, { format: { with: VALID_PASSWORD_REGEX } }
      #  email正規表現
-     VALID_EMAIL_REGEX = /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.freeze
+     VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i.freeze
      validates :email, { format: {with: VALID_EMAIL_REGEX}}
   end
-
-
 
   def already_liked?(comment)
     self.likes.exists?(comment_id: comment.id)
