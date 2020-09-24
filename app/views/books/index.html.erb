@@ -19,8 +19,12 @@
              <p>検索結果</p>
              <div class = "ans">
               <% if @books.length != 0 %>
-                <% @books.find do |book|%>
-                    <%= link_to book.name, book_path(book.id), class: "ffff"%>
+                <% if user_signed_in?%>
+                  <% @books.find do |book|%>
+                      <%= link_to book.name, book_path(book.id), class: "ffff"%>
+                  <% end%>
+                <% else %>
+                  <%= link_to '新規登録しましょう！', new_user_registration_path, class: "ffff" %>
                 <% end %>
               <% else %>
                 <% if user_signed_in?%>

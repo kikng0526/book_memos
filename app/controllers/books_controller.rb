@@ -33,6 +33,28 @@ class BooksController < ApplicationController
     @like = Like.new
   end
 
+  def destroy
+    @book = Book.find(params[:id])
+    if @book.destroy
+      redirect_to root_path
+    else
+      render :show
+    end
+  end
+
+  def edit
+    @book = Book.find(params[:id])
+  end
+
+  def update
+    @book = Book.find(params[:id])
+    if @book.update(book_params)
+      redirect_to book_path
+    else
+      render :edit
+    end
+  end
+
 
   private
 

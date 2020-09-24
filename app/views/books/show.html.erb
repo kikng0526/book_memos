@@ -14,12 +14,19 @@
           <th class="detail-item">カテゴリー</th>
           <td class="detail-value"><%= @book.category.name %></td>
         </tr>
+        <% if current_user.id == @book.user_id%>
+          <%= link_to book_path(@book), method: :delete  do %>
+            <i class="fas fa-trash"></i>
+          <% end %>
+          <%= link_to edit_book_path(@book), method: :get do%>
+            <i class="fas fa-edit"></i>
+          <% end %>
+        <% end %>
       </tbody>
     </table>
   </div>
   <div class="container">
     <% if current_user %>
-
       <%= form_with(model: [@book, @comment], remote: true) do |f| %>
         <%= f.text_area :text, placeholder: "コメントする" ,rows: "2"%>
         <%= f.submit "SEND" %>
@@ -33,8 +40,11 @@
         <% if @comments %>
           <% @comments.reverse_each do |comment| %>
             <p class = "com">
+           <%= link_to user_path(comment.user_id), class: "user-nickname"  do %>
             <%= comment.user.nickname %> <a>さん</a>
             <a>:</a><%= comment.text %>
+           <% end %>
+          
 
           <% if current_user.already_liked?(comment) %>
               <%= link_to comment_like_path(comment), method: :delete  do%>
