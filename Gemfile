@@ -69,3 +69,7 @@ gem 'pry-rails'
 gem 'ransack'
 
 gem 'jquery-rails'
+
+group :production do
+  gem 'rubocop', require: false
+end
