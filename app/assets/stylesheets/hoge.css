@@ -1,0 +1,53 @@
+@charset "utf-8";
+.menu {
+  padding: 90px 0 60px;
+  color: #5a5c5f;
+  
+}
+
+.containers {
+  width: 100%;
+  background-image: url(https://beiz.jp/images_P/paper/paper_00108.jpg)
+}
+
+.menu-card {
+  width: 33%;
+  margin-top: 35px;
+  
+}
+
+@keyframes my-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.item-card-inner {
+  padding: 25px 30px;
+  /* background-color: #dbe0e4; */
+  border-radius: 7px;
+  box-shadow: 1px 1px 4px #d2d3d6;
+  text-align: center;
+  margin: 0 20px;
+  height: 600px;
+  background-color: whitesmoke;
+  animation-name: my-fade-in;
+  animation-duration: 4s;
+}
+
+.menu-image {
+  width: 100%;
+  margin-bottom: 20px;
+  border-radius: 5px;
+ 
+  
+}
+
+.menu-card-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+ 
+}
