@@ -1,5 +1,4 @@
 class BooksController < ApplicationController
-  
   def new
     @book = Book.new
     @commets = Comment.all
@@ -25,7 +24,6 @@ class BooksController < ApplicationController
   end
 
   def show
-   
     @book = Book.find(params[:id])
     # redirect_to action: :index unless user_signed_in?
     @comment = Comment.new
@@ -55,7 +53,6 @@ class BooksController < ApplicationController
     end
   end
 
-
   private
 
   def book_params
@@ -69,5 +66,4 @@ class BooksController < ApplicationController
   def comment_params
     params.require(:comment).permit(:text).merge(user_id: current_user.id, book_id: params[:book_id])
   end
-
 end
