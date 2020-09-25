@@ -10,4 +10,4 @@ class Category < ActiveHash::Base
     { id: 7, name: 'コミック雑誌' },
     { id: 8, name: 'その他' }
   ]
-  end
+end
