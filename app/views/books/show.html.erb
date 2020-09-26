@@ -42,8 +42,6 @@
             <p class = "com">
             <%= comment.user.nickname %> <u>さん</u>
             <a>:</a><%= comment.text %>
-          
-
           <% if current_user.already_liked?(comment) %>
               <%= link_to comment_like_path(comment), method: :delete  do%>
                 <i class="fas fa-heart"><%= comment.likes.count %></i>
@@ -53,7 +51,6 @@
                  <i class="far fa-heart"><%= comment.likes.count %></i>
                <% end %>
             <% end %>
-
             <%= link_to [@book, comment], method: :delete, class:'delete' do %>
              <i class="fas fa-trash-alt"></i> 
            <% end %>

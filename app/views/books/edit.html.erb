@@ -13,40 +13,40 @@
         </p>
         <%= form_with model: @book, local: true do |f| %>
         <%= f.file_field :image, id:"item-image" %>
+        </div>
       </div>
-    </div>
-    <%# /出品画像 %>
-    <%# 商品名と商品説明 %>
-    <div class="new-items">
-      <div class="weight-bold-text">
-        book_name
-        <span class="indispensable">必須</span>
-      </div>
-      <%= f.text_area :name, class:"items-text", id:"name", placeholder:"book_name" %>
-    </div>
-    <%# /商品名と商品説明 %>
-
-    <%# 商品の詳細 %>
-    <div class="items-detail">
-      <div class="weight-bold-text">genre</div>
-      <div class="form">
+      <%# /出品画像 %>
+      <%# 商品名と商品説明 %>
+      <div class="new-items">
         <div class="weight-bold-text">
-          カテゴリー
+          book_name
           <span class="indispensable">必須</span>
         </div>
-        <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
+        <%= f.text_area :name,   class:"items-text", id:"name", placeholder:"book_name" %>
+      </div>  
+      <%# /商品名と商品説明 %>  
+  
+      <%# 商品の詳細 %>
+      <div class="items-detail">
+        <div class="weight-bold-text">genre</div>
+        <div class="form">
+          <div class="weight-bold-text">
+            カテゴリー
+            <span class="indispensable">必須</span>
+          </div>
+          <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
+        </div>
       </div>
+      <%# /商品の詳細 %>
+  
+      <%# /注意書き %>
+      <%# 下部ボタン %>
+      <div class="sell-btn-contents">
+        <%= f.submit "登録する" ,class:"sell-btn" %>
+        <%=link_to 'もどる', root_path, class:"back-btn" %>
+      </div>
+      <%# /下部ボタン %>
     </div>
-    <%# /商品の詳細 %>
-
-    <%# /注意書き %>
-    <%# 下部ボタン %>
-    <div class="sell-btn-contents">
-      <%= f.submit "登録する" ,class:"sell-btn" %>
-      <%=link_to 'もどる', root_path, class:"back-btn" %>
-    </div>
-    <%# /下部ボタン %>
-  </div>
   <% end %>
   <%= render "shared/footer" %>
 </div>

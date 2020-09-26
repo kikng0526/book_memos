@@ -6,30 +6,24 @@
   <%# header %>
     <%= render "shared/header"%>
   <%# header %>
-  
     <div class = "menu">
     <h2 class = "title-name">＜投稿した本一覧＞<h2>
       <div class = "containers">
-         <div class = "menu-card-wrapper"> 
-          
-            <%# 本の一覧 %>
-         
-              
-              <% @books.each do |book| %>
-              <div class = "menu-card">
-              <div class='item-card-inner'> 
-                    <%= link_to book_path(book.id),class: 'name', local: true do %>
-                      <% if book.image.attached? %>
-                        <%= image_tag book.image, class: "menu-image"%>
-                      <% end %>
-                    <% end %>
-                    </div>
-                    </div>
-                    <% end %>
-                    </div>
-              
-            
-            <%# 本の一覧 %>
+        <div class = "menu-card-wrapper"> 
+        <%# 本の一覧 %>
+        <% @books.each do |book| %>
+          <div class = "menu-card">
+          <div class='item-card-inner'> 
+            <%= link_to book_path(book.id),class: 'name', local: true do %>
+               <% if book.image.attached? %>
+                  <%= image_tag book.image, class: "menu-image"%>
+                <% end %>
+            <% end %>
+          </div>
+          </div>
+        <% end %>
+      </div>
+      <%# 本の一覧 %>
       </div>
    </div>
    <%= render "shared/footer" %>
